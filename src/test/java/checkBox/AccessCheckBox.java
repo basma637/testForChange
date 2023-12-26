@@ -17,8 +17,7 @@ public class AccessCheckBox extends BaseTest {
         SelectCheckBox1.click();
         /*if (SelectCheckBox1.isSelected()){
         System.out.println("box1 checked");
-          String expectedResult= "box1 checked";
-                }
+          String expectedResult= "box1 checked"  }
         String actualResult= "box1 checked";*/
         assertTrue(SelectCheckBox1.isSelected());
     }
