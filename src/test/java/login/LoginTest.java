@@ -35,7 +35,6 @@ public class LoginTest extends BaseTest {
         String expectedResult= "Your username is invalid!";
         String actualResult;
         actualResult= driver.findElement(By.xpath("//* [@class=\"flash error\"]")).getText();
-       // if(actualResult){
        assertTrue(actualResult.contains(expectedResult));
     }
     @Test (priority = 3)

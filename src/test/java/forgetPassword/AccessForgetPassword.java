@@ -19,5 +19,5 @@ public class AccessForgetPassword extends BaseTest {
         WebElement actualResult = driver.findElement(By.tagName("h1"));
         //System.out.println(actualResult);
         assertTrue(actualResult.isEnabled());
-
-}}
+    }
+}

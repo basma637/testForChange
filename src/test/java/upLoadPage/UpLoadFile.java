@@ -9,6 +9,7 @@ import static org.testng.Assert.assertTrue;
 
 public class UpLoadFile extends BaseTest {
     @Test(priority = 1)
+
     public void testUpLoadFile() {
         WebElement PressUploadFile = driver.findElement(By.xpath("// a [contains(@href,'/upload')]"));
         PressUploadFile.click();
