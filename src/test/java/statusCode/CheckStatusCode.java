@@ -1,63 +1,42 @@
 package statusCode;
 
 import base.BaseTest;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.assertFalse;
+import pages.*;
 import static org.testng.Assert.assertTrue;
 
 public class CheckStatusCode extends BaseTest {
     @Test(priority = 1)
     public void test200StatusCode() {
-        WebElement PressStatusCodeLink = driver.findElement(By.linkText("Status Codes"));
-        PressStatusCodeLink.click();
-        WebElement ClickOn200 = driver.findElement(By.xpath("// a [contains (@href,'status_codes/200')]"));
-        ClickOn200.click();
+        StatusCodesPages statusCodesPages = homePage.clickOnStatusCodeLink();
+        StatusCodeOf200Page statusCodeOf200Page = statusCodesPages.clickOn200code();
+        String ActualResult = statusCodeOf200Page.getvalidationMessage();
+        //System.out.println(ActualResult);
         String expectedResult = "This page returned a 200 status code";
-        String actualResult;
-        actualResult = driver.findElement(By.xpath("//*[ @id = 'content']")).getText();
-        //System.out.println(actualResult);
-        assertTrue(actualResult.contains(expectedResult));
+        assertTrue(ActualResult.contains(expectedResult));
     }
-
-    @Test(priority = 2)
-    public void test301StatusCode() {
-        WebElement PressStatusCodeLink = driver.findElement(By.linkText("Status Codes"));
-        PressStatusCodeLink.click();
-        WebElement ClickOn301 = driver.findElement(By.xpath("// a [contains (@href,'status_codes/301')]"));
-        ClickOn301.click();
+    @Test (priority = 2)
+    public void test301StatusCode(){
+        StatusCodesPages statusCodesPages = homePage.clickOnStatusCodeLink();
+        StatusCodeOf301Page statusCodeOf301Page = statusCodesPages.clickOn301();
+        String ActualResult = statusCodeOf301Page.getvalidationMessageOf301();
         String expectedResult = "This page returned a 301 status code";
-        String actualResult;
-        actualResult = driver.findElement(By.xpath("//*[ @id = 'content']")).getText();
-        //System.out.println(actualResult);
-        assertTrue(actualResult.contains(expectedResult));
-
+        assertTrue(ActualResult.contains(expectedResult));
     }
-
-    @Test(priority = 3)
-    public void test404StatusCode() {
-        WebElement PressStatusCodeLink = driver.findElement(By.linkText("Status Codes"));
-        PressStatusCodeLink.click();
-        WebElement ClickOn404 = driver.findElement(By.xpath("// a [contains (@href,'status_codes/404')]"));
-        ClickOn404.click();
-        String expectedResult = "This page returned a 404 status code";
-        String actualResult;
-        actualResult = driver.findElement(By.xpath("//*[ @id = 'content']")).getText();
-        //System.out.println(actualResult);
-        assertTrue(actualResult.contains(expectedResult));
+    @Test (priority = 3)
+    public void test404StatusCode(){
+        StatusCodesPages statusCodesPages = homePage.clickOnStatusCodeLink();
+        StatusCodeOf404Page statusCodeOf404Page = statusCodesPages.clickOn404();
+        String ActualResult = statusCodeOf404Page.getvalidationMessageOf404();
+        String expectedResult = "This page returned a 301 status code";
+        assertTrue(ActualResult.contains(expectedResult));
     }
-    @Test(priority = 4)
-    public void test500StatusCode() {
-        WebElement PressStatusCodeLink = driver.findElement(By.linkText("Status Codes"));
-        PressStatusCodeLink.click();
-        WebElement ClickOn500 = driver.findElement(By.xpath("// a [contains (@href,'status_codes/500')]"));
-        ClickOn500.click();
+    @Test (priority = 4)
+    public void test500StatusCode(){
+        StatusCodesPages statusCodesPages = homePage.clickOnStatusCodeLink();
+        StatusCodeOf500Page statusCodeOf500Page = statusCodesPages.clickOn500();
+        String ActualResult = statusCodeOf500Page.getvalidationMessageOf500();
         String expectedResult = "This page returned a 500 status code";
-        String actualResult;
-        actualResult = driver.findElement(By.xpath("//*[ @id = 'content']")).getText();
-        //System.out.println(actualResult);
-        assertTrue(actualResult.contains(expectedResult));
+        assertTrue(ActualResult.contains(expectedResult));
     }
 }
