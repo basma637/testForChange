@@ -24,7 +24,7 @@ public class StatusCodesPages {
         return new StatusCodeOf301Page(driver);
     }
     public StatusCodeOf404Page clickOn404(){
-        driver.findElement(ClickOn301).click();
+        driver.findElement(ClickOn404).click();
         return new StatusCodeOf404Page(driver);
     }
     public StatusCodeOf500Page clickOn500(){

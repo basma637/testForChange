@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage {
+
     WebDriver driver;
     public HomePage(WebDriver driver){
         this.driver = driver;
@@ -14,28 +15,46 @@ public class HomePage {
     private final By uploadLink = By.linkText("File Upload");
     private final By checkBoxLink = By.xpath("// a [contains(@href,'checkboxes')]");
     private  final By forgotPassword = By.xpath("// a [contains(@href , 'forgot_password')]");
+    private  final  By dynamicLoadingLink = By.xpath("// a [contains(@href , 'dynamic_loading')]");
+    private final  By dropDwonLink = By.xpath("// a [contains(@href , '/dropdown')]");
+    private  final By alertJSLink = By.xpath("// a [contains(@href , 'javascript_alerts')]");
+    private void ClickOnLink(By locator){
+        driver.findElement(locator).click();
+    }
 
     // Actions
     public LoginPage clickOnFormAuthenticationLink(){
-        driver.findElement(formAuthenticationLink).click();
+        ClickOnLink(formAuthenticationLink);
         return new LoginPage(driver);
     }
 
     public UploadPage clickOnUploadLink(){
-        driver.findElement(uploadLink).click();
+        ClickOnLink(uploadLink);
         return new UploadPage(driver);
     }
     public StatusCodesPages clickOnStatusCodeLink(){
-        driver.findElement(statusCodeLink).click();
+        ClickOnLink(statusCodeLink);
         return new StatusCodesPages(driver);
     }
     public CheckBoxPages clickOnCheckBoxLink(){
-        driver.findElement(checkBoxLink).click();
+        ClickOnLink(checkBoxLink);
         return new CheckBoxPages(driver);
     }
     public  ForegotPasswordPages  clickOnForegetPassword(){
-        driver.findElement(forgotPassword).click();
+        ClickOnLink(forgotPassword);
         return new ForegotPasswordPages(driver);
+    }
+    public DynamicLoadingPage clickOnDynamicallyLoadedLink(){
+        ClickOnLink(dynamicLoadingLink);
+        return new DynamicLoadingPage(driver);
+    }
+    public DropDwonPage clickDropDwonLink(){
+        ClickOnLink(dropDwonLink);
+        return new DropDwonPage(driver);
+    }
+    public JSAlertPage clickOnJSAlert(){
+        ClickOnLink(alertJSLink);
+        return new JSAlertPage(driver);
     }
    /* public CheckBoxPage clickOnCheckBoxLink(){
         driver.findElement(checkBoxLink).click();

@@ -22,7 +22,8 @@ public class BaseTest {
     }
    @AfterClass
     public void tearDwon(){
-    driver.quit();
+
+        //driver.quit();
     }
 
 }

@@ -15,9 +15,6 @@ public class CheckBoxTests extends BaseTest {
         checkBoxPages.clickCheckBox1();
         //System.out.println(checkBoxPages.getCheckBox1Status());
         assertTrue(checkBoxPages.getCheckBox1Status());
-      //  CheckBoxPage checkBoxPage;
-     //   checkBoxPage = homePage.clickOnCheckBoxLink();
-       // checkBoxPage.clickCheckBox1();
     }
 
     @Test (priority = 2)
@@ -26,10 +23,5 @@ public class CheckBoxTests extends BaseTest {
         checkBoxPages.pressOnCheckBox2();
         assertFalse(checkBoxPages.getCheckBox2Status());
 
-       /* WebElement PressOnCheckBox = driver.findElement(By.xpath("// a [contains(@href,'checkboxes')]"));
-        PressOnCheckBox.click();
-        WebElement deselectCheckBox2 = driver.findElement(By.xpath("// input [@type='checkbox'][2]"));
-        deselectCheckBox2.click();
-        assertFalse (deselectCheckBox2.isSelected());*/
     }
 }

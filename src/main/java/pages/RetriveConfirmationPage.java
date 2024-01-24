@@ -13,6 +13,7 @@ public class RetriveConfirmationPage {
 
     //action
     public String getRetriveConfirmationMSG(){
-       return driver.findElement(RetriveConfirmationMSG).getText();
+
+        return driver.findElement(RetriveConfirmationMSG).getText();
     }
 }
