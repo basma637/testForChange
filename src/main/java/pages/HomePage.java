@@ -18,6 +18,8 @@ public class HomePage {
     private  final  By dynamicLoadingLink = By.xpath("// a [contains(@href , 'dynamic_loading')]");
     private final  By dropDwonLink = By.xpath("// a [contains(@href , '/dropdown')]");
     private  final By alertJSLink = By.xpath("// a [contains(@href , 'javascript_alerts')]");
+    private  final By framLink = By.xpath("//a [contains(@href , '/tinymce')]");
+    private  final By moduleLink = By.xpath("//a [contains(@href , '/entry_ad')]");
     private void ClickOnLink(By locator){
         driver.findElement(locator).click();
     }
@@ -55,6 +57,14 @@ public class HomePage {
     public JSAlertPage clickOnJSAlert(){
         ClickOnLink(alertJSLink);
         return new JSAlertPage(driver);
+    }
+    public FramePage clickOnFram(){
+        ClickOnLink(framLink);
+        return new FramePage(driver);
+    }
+    public ModulePage clickOnModuleLink(){
+        ClickOnLink(moduleLink);
+        return new ModulePage(driver);
     }
    /* public CheckBoxPage clickOnCheckBoxLink(){
         driver.findElement(checkBoxLink).click();

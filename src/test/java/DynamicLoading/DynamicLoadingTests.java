@@ -22,10 +22,11 @@ public class DynamicLoadingTests extends BaseTest {
         DynamicLoadingPage dynamicLoadingPage =homePage.clickOnDynamicallyLoadedLink();
         TwoPage twoPage = dynamicLoadingPage.clickOnExampleTwoLink();
         twoPage.clickOnStartButton();
-       // String acualReult = twoPage.GetLoaderStatus();
-        System.out.println(twoPage.GetLoaderStatus());
+        String acualReult = twoPage.GetLoaderValidationMSG();
+        String expectedResult = "Hello World!";
+        System.out.println(twoPage.GetLoaderValidationMSG());
 
-        assertFalse(twoPage.GetLoaderStatus());
+        assertEquals(acualReult,expectedResult);
 
     }
 }

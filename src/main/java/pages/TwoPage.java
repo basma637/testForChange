@@ -21,11 +21,10 @@ public class TwoPage {
     public void clickOnStartButton(){
         driver.findElement(StartButton).click();
     }
-    public boolean GetLoaderStatus() {
+    public String GetLoaderValidationMSG() {
         wait = new WebDriverWait(driver , Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(ValidationMessage)));
-        return driver.findElement(CatchLoader).isDisplayed();
-        // return driver.findElement(ValidationMessage).getText();
+        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(CatchLoader)));
+        return driver.findElement(ValidationMessage).getText();
     }
 }
 

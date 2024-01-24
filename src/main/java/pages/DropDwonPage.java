@@ -16,15 +16,11 @@ public class DropDwonPage {
         select = new Select(driver.findElement(dropDowmList));
         select.selectByVisibleText(VisiableText);
     }
-    public WebElement getVisiableTextOFSelectedItem(String VisiableText){
+    public String getVisiableTextOFSelectedItem(String VisiableText){
         select = new Select(driver.findElement(dropDowmList));
-        select.getFirstSelectedOption();
-        return select.getFirstSelectedOption();
+        return String.valueOf(select.getFirstSelectedOption());
     }
-    public void deselectDropdown(){
-          select= new Select(driver.findElement(dropDowmList));
-          select.deselectAll();
-
-    }
+   /* public void deselectDropdown(){select= new Select(driver.findElement(dropDowmList));
+          select.deselectAll(); }*/
 
 }
