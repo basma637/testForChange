@@ -9,6 +9,8 @@ public class ModulePage {
         this.driver = driver;}
 
     final By  closeModulePage = By.xpath("// * [@class = 'modal-footer']");
+    final By  reanableButtonInModulePage = By.xpath("// * [@id = 'restart-ad']");
+    final By  validationMSGOfModulePage = By.cssSelector(".example >h3");
     public void clickModulePageById() {
         try {
             driver.findElement(closeModulePage).click();
@@ -22,6 +24,14 @@ public class ModulePage {
     private void handleException(String clickModulePageById, Exception e) {
         System.err.println("Exception in " + clickModulePageById + ": " + e.getMessage());
         e.printStackTrace();
+    }
+    public void ClickOnreanableButton(){
+        driver.findElement(reanableButtonInModulePage).click();
+    }
+
+    public String getValidationMSGOfModulePage(){
+
+        return driver.findElement(validationMSGOfModulePage).getText();
     }
 
 
