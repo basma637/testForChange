@@ -20,6 +20,7 @@ public class FramePage {
         private final By increaseIndentButton = By.cssSelector("[aria-label='Increase indent']");
 
         private void switchToFrame(){
+
             driver.switchTo().frame(frame);
         }
         private void switchToParent(){
@@ -27,8 +28,9 @@ public class FramePage {
         }
 
         public void clearTextBox(){
-            wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             switchToFrame();
+            wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.textToBe(textBox,"Your content goes here." ));
             driver.findElement(textBox).clear();
             switchToParent();
         }
